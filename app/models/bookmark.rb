@@ -7,5 +7,6 @@ class Bookmark < ApplicationRecord
     scope: :list,
     message: 'The movie can join the list only one time'
   }
-
 end
+
+
