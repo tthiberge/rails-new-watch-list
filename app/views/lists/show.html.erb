@@ -2,6 +2,35 @@
 
 <p>Please find here all the movies of this list</p>
 
+<%#= link_to "Add a new film to this list", new_list_bookmark_path(@list)  %>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <ol>
+  <li>
+    <ul>
+      <li><%= bookmark.movie.title %> </li>
+      <li><%= bookmark.movie.overview %></li>
+      <li><%= bookmark.movie.rating %></li>
+      <li><%= bookmark.comment %></li>
+      <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i class="fa-solid fa-circle-xmark remove"></i>
+              <% end %>
+
+    </ul>
+  </li>
+  </ol>
+<% end %>
+
+
+<br><br><br>
+
+<%= render partial: 'bookmarks/form_new', locals: {list: @list, bookmark: @bookmark}  %>
 
 <br><br><br><br><br>
 <%= link_to "return to all the lists", lists_path  %>
+
+
+ <%#= link_to "Delete",
+    review_path(review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

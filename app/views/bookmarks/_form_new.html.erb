@@ -1,0 +1,6 @@
+
+<%= simple_form_for [list, bookmark] do |f| %>
+  <%= f.association :movie, input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}} %>
+  <%= f.input :comment %>
+  <%= f.button :submit %>
+<% end %>

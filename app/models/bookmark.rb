@@ -8,5 +8,3 @@ class Bookmark < ApplicationRecord
     message: 'The movie can join the list only one time'
   }
 end
-
-

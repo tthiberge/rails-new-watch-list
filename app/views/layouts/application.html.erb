@@ -8,9 +8,24 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+
+
   </head>
 
   <body>
+    <div id="typed-strings">
+     <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+     <p>It <em>types</em> out sentences.</p>
+    </div>
+    <span id="typed"></span>
+
     <%= yield %>
+
+    <script>
+      var typed = new Typed('#typed', {
+       stringsElement: '#typed-strings'
+      });
+    </script>
   </body>
 </html>
