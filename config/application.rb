@@ -18,6 +18,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module RailsNewWatchList
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -33,5 +34,6 @@ module RailsNewWatchList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
   end
 end
